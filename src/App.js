@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PostItem from './PostItem';
 import redditClient from 'api/redditClient';
 
 import logo from './logo.svg';
@@ -24,6 +25,7 @@ class App extends Component {
         <p className="app-intro">
           This is some extra information.
         </p>
+        <PostItem />
       </div>
     );
   }
