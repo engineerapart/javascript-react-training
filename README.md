@@ -7,7 +7,7 @@ This tutorial is split into several sections. The *completed* state of each sect
 The first section, [Getting Started](#GettingStarted) begins with the code in the [getting-started](tree/getting-started) branch of this repository. Each branch is accompanied by a README that walks you through that section's tasks (the Create React App boilerplate below is removed).
 
 1. <a name="getting-started"></a>[Getting Started](tree/getting-started)
-    - Setting up your Reddit client
+    - Reviewing the project layout
     - Creating your first React component
     - Building the Reddit homepage
       - Building a container for a Reddit post
