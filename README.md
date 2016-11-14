@@ -17,6 +17,7 @@ The first section, [Getting Started](#GettingStarted) begins with the code in th
     - Passing state between routes
 3. [Managing Data in React](tree/managing-data-in-react)
     - Fetching data from remote resources
+      - Add the Reddit homepage's top, new, etc. resource urls
     - Using promises
     - Managing state in a React component
 4. [Adding Redux to your app](tree/adding-redux)
