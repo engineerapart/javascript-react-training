@@ -2,11 +2,12 @@
 // injected into the application via DefinePlugin in Webpack configuration.
 
 var REACT_APP = /^REACT_APP_/i;
+var REDDIT = /^REDDIT_/i;
 
 function getClientEnvironment(publicUrl) {
   var processEnv = Object
     .keys(process.env)
-    .filter(key => REACT_APP.test(key))
+    .filter(key => REACT_APP.test(key) || REDDIT.test(key))
     .reduce((env, key) => {
       env[key] = JSON.stringify(process.env[key]);
       return env;

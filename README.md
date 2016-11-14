@@ -1,9 +1,54 @@
+# React Tutorial Starter Kit
+Learn React by building a Reddit client!
+
+## Overview
+This tutorial is split into several sections. The *completed* state of each section is represented by a branch checked into this repository. Each section's code will begin where the previous section's code left off.
+
+The first section, [Getting Started](#GettingStarted) begins with the code in the [getting-started](tree/getting-started) branch of this repository. Each branch is accompanied by a README that walks you through that section's tasks (the Create React App boilerplate below is removed).
+
+1. <a name="getting-started"></a>[Getting Started](tree/getting-started)
+    - Setting up your Reddit client
+    - Creating your first React component
+    - Building the Reddit homepage
+      - Building a container for a Reddit post
+2. [Using React-Router](tree/using-react-router)
+    - Adding pages (routes)
+    - Assigning components to routes
+    - Passing state between routes
+3. [Managing Data in React](tree/managing-data-in-react)
+    - Fetching data from remote resources
+    - Using promises
+    - Managing state in a React component
+4. [Adding Redux to your app](tree/adding-redux)
+    - Why Redux & Redux basics
+    - Adding Redux actions
+    - Adding Redux reducers
+    - Jumpstate
+5. [Putting it all together](tree/putting-it-all-together)
+    - Building a Subreddit
+    - Building a comments page
+6. Next steps
+    - See if you can add authentication - Reddit uses OAuth2
+    - See if you can make a new post!
+
+
+# Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+*However*, since we are building a Reddit client and some Reddit endpoints return Markdown-formatted content, the following changes have been made to this app in order to quickly aid students in learning React without getting stuck on technical details:
+
+## Dependencies Added
+- [react-markdown - A Markdown-to-React-component rendering library](https://github.com/rexxars/react-markdown)
+- [isomorphic-fetch - Promise-based http client for making http requests](https://github.com/matthew-andrews/isomorphic-fetch)
+
+## Code Changes to the stock create-react-app
+- Environment variables prefixed with `REDDIT_` will also be loaded into dotenv
+
+## Create React App Standard Walkthrough
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Table of Contents
+## Create React App Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)

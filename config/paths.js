@@ -38,8 +38,7 @@ module.exports = {
   nodePaths: nodePaths
 };
 
-
-
+/* eslint-disable no-undef */
 // config before publish: we're in ./packages/react-scripts/config/
 if (__dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1) {
   module.exports = {
@@ -55,3 +54,4 @@ if (__dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1) 
     nodePaths: nodePaths
   };
 }
+/* eslint-enable no-undef */
