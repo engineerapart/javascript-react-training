@@ -1,51 +1,11 @@
 import React, { Component } from 'react';
-import PostItem from './PostItem';
-import redditClient from 'api/redditClient';
+import { Link } from 'react-router';
 
 import logo from './logo.svg';
 import './App.css';
 
-function createPostItem(item) {
-  const { data } = item;
-  const props = {
-    title: data.title,
-    thumbUrl: data.thumbnail,
-    voteCount: data.ups,
-    commentCount: data.num_comments,
-    createdDate: data.created_utc,
-    createdBy: data.author,
-    subreddit: data.subreddit,
-    threadId: data.name,
-    key: data.name,
-  };
-
-  return <PostItem {...props} />
-}
-
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      posts: [],
-      myName: 'magic',
-      chava: 'is cool',
-    }
-  }
-
-  componentDidMount() {
-    redditClient().getSubreddit({subreddit: 'birdsforscale'})
-      .then(({json}) => {
-        console.log(json);
-        const { data: { children: redditPosts }} = json;
-        this.setState({posts: redditPosts});
-      }, console.log)
-      .catch(console.log);
-  }
-
   render() {
-    const { posts } = this.state;
-
     return (
       <div className="app">
         <div className="app-header">
@@ -56,9 +16,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <p className="app-intro">
-          This is some extra information.
+          <Link to='posts'>Send me to the posts!</Link>
         </p>
-        {posts.map(createPostItem)}
+        {this.props.children}
       </div>
     );
   }
