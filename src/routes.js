@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from './App';
+import Homepage from './Homepage';
 import Subreddit from './Subreddit';
 
 function Login(props) {
@@ -29,13 +30,19 @@ function SomeComponent(props) {
   </RootComp>;
 }
 
+function Thread() {
+  return null;
+}
+
 export default (
     <Router history={browserHistory}>
       <Route path='/' component={App}>
-        <IndexRoute component={???} />
+        <IndexRoute component={Homepage} />
         <Route path='login' component={Login} />
         <Route path='question' component={SomeComponent} />
-        <Route path='posts' component={Subreddit} />
+        <Route path='posts' component={Subreddit}>
+          <Route path=':id' component={Thread} />
+        </Route>
       </Route>
     </Router>
   );
