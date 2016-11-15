@@ -6,6 +6,7 @@ import Store from './store';
 import App from './App';
 import Homepage from './Homepage';
 import Subreddit from './Subreddit';
+import Thread from './Thread';
 
 function Login(props) {
   return (
@@ -30,10 +31,6 @@ function SomeComponent(props) {
       <span>Some other text</span>
     </div>
   </RootComp>;
-}
-
-function Thread() {
-  return null;
 }
 
 const history = syncHistoryWithStore(browserHistory, Store);

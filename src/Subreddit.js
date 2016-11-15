@@ -55,6 +55,7 @@ class Subreddit extends React.Component {
 
     return <div>
       {posts.map(createPostItem)}
+      {this.props.children}
     </div>
   }
 }
