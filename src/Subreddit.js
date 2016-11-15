@@ -2,6 +2,16 @@ import React from 'react';
 import PostItem from './PostItem';
 import redditClient from 'api/redditClient';
 
+import Store from './store';
+const announcePosts = (posts) => {
+  return {
+    type: 'SUBREDDIT_POSTS_DOWNLOADED',
+    payload: {
+      posts,
+    },
+  };
+}
+
 function createPostItem(item) {
   const { data } = item;
   const props = {
@@ -34,6 +44,8 @@ class Subreddit extends React.Component {
         console.log(json);
         const { data: { children: redditPosts }} = json;
         this.setState({posts: redditPosts});
+
+        Store.dispatch(announcePosts(redditPosts));
       }, console.log)
       .catch(console.log);
   }

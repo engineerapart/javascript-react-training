@@ -1,5 +1,8 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+import Store from './store';
+
 import App from './App';
 import Homepage from './Homepage';
 import Subreddit from './Subreddit';
@@ -11,7 +14,6 @@ function Login(props) {
 }
 
 function RootComp(props) {
-  console.log('Has children? ', props.hasOwnProperty('children'));
   debugger;
   return (
   <div>
@@ -34,8 +36,10 @@ function Thread() {
   return null;
 }
 
+const history = syncHistoryWithStore(browserHistory, Store);
+
 export default (
-    <Router history={browserHistory}>
+    <Router history={history}>
       <Route path='/' component={App}>
         <IndexRoute component={Homepage} />
         <Route path='login' component={Login} />
