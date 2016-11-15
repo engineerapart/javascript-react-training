@@ -1,0 +1,10 @@
+.post {
+  display: block;
+  border: 1px solid darkmagenta;
+  width: 256px;
+}
+
+.post-item_thumb--img {
+  width: 48px;
+  height: 48px;
+}

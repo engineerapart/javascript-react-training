@@ -1,7 +1,9 @@
 import React from 'react';
+import './PostItem.css';
 
 function PostItem(props) {
-  const { title, thumbUrl, voteCount, commentCount, createdDate, createdBy, subreddit, threadId } = props;
+  const { title, thumbUrl, voteCount, commentCount,
+          createdDate, createdBy, subreddit, threadId } = props;
   return (
     <div className='post'>
       <div className='post-item'>
