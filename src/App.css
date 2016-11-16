@@ -14,6 +14,11 @@
   color: white;
 }*/
 
+.link-active {
+  color: red;
+  padding-right: 10px;
+}
+
 .app-intro {
   font-size: large;
 }

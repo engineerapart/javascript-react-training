@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { IndexLink, Link } from 'react-router';
 
 import logo from './logo.svg';
 
@@ -17,7 +17,9 @@ function Header(props) {
     <div style={styles.header}>
       <img src={logo} className="app-logo" alt="logo" />
       <h2 style={{fontWeight: 'bold'}}>Welcome to React</h2>
-      <Link to='posts' activeStyle={{color: 'red'}} activeClassName='whatever'>Go to Posts</Link>
+      <IndexLink to='/' activeClassName='link-active'>Go Home</IndexLink>
+      <Link to='/r' activeClassName='link-active'>Go to Posts</Link>
+      <Link to='something' activeClassName='link-active'>Go to Somewhere</Link>
     </div>
   );
 }

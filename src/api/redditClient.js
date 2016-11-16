@@ -10,12 +10,12 @@ const userAgent = `react:com.wizeline.training.${pkg.version}.[${REDDIT_NONCE}] 
 
 function redditClient(options = {}) {
   function getRedditHome({...rest}) {
-    const uri = buildUri(apiMap.home(), { ...rest });
+    const uri = buildUri(apiMap.home({}), { ...rest });
     return execute(uri);
   }
 
   function getAllSubreddits({...rest}) {
-    const uri = buildUri(apiMap.allSubreddits(), { ...rest });
+    const uri = buildUri(apiMap.allSubreddits({}), { ...rest });
     return execute(uri);
   }
 

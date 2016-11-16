@@ -21,7 +21,7 @@ const apiMap = {
 
 function template(strings, ...keys) {
   return (function(...values) {
-    values[0].redditUrl = redditUrl;;
+    values[0].redditUrl = redditUrl;
     var dict = values[values.length - 1] || {};
     var result = [strings[0]];
     keys.forEach(function(key, i) {

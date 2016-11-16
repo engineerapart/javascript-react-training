@@ -33,6 +33,14 @@ function SomeComponent(props) {
   </RootComp>;
 }
 
+function SubredditContainer(props) {
+  return (
+    <div>
+      {props.children}
+    </div>
+  );
+}
+
 const history = syncHistoryWithStore(browserHistory, Store);
 
 export default (
@@ -41,7 +49,8 @@ export default (
         <IndexRoute component={Homepage} />
         <Route path='login' component={Login} />
         <Route path='question' component={SomeComponent} />
-        <Route path='posts' component={Subreddit}>
+        <Route path='r/:subreddit' component={SubredditContainer}>
+          <IndexRoute component={Subreddit} />
           <Route path=':id' component={Thread} />
         </Route>
       </Route>

@@ -39,15 +39,20 @@ class Subreddit extends React.Component {
   }
 
   componentDidMount() {
-    redditClient().getSubreddit({subreddit: 'birdsforscale'})
-      .then(({json}) => {
-        console.log(json);
-        const { data: { children: redditPosts }} = json;
-        this.setState({posts: redditPosts});
+    const { params } = this.props;
+    const { subreddit } = params || {};
 
-        Store.dispatch(announcePosts(redditPosts));
-      }, console.log)
-      .catch(console.log);
+    if(subreddit) {
+      redditClient().getSubreddit({subreddit})
+        .then(({json}) => {
+          console.log(json);
+          const { data: { children: redditPosts }} = json;
+          this.setState({posts: redditPosts});
+
+          Store.dispatch(announcePosts(redditPosts));
+        }, console.log)
+        .catch(console.log);
+    }
   }
 
   render() {

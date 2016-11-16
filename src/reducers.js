@@ -1,5 +1,6 @@
 const initialState = {
   posts: [],
+  homePosts: [],
 }
 
 function subredditPosts(state = initialState, action) {
@@ -7,6 +8,12 @@ function subredditPosts(state = initialState, action) {
     return {
       posts: action.payload.posts,
     };
+  }
+
+  if(action.type === 'REDDIT_HOME_POSTS_DOWNLOADED') {
+    return {
+      homePosts: action.payload.posts,
+    }
   }
 
   return state;

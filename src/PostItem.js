@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import './PostItem.css';
 
 function PostItem(props) {
@@ -14,7 +15,9 @@ function PostItem(props) {
           <div className='post-item_createdinfo'>
             <span className='post-item_createdinfo--by'>{createdBy}</span>
             <span className='post-item_createdinfo--date'>{createdDate}</span>
-            <span className='post-item_createdinfo--subreddit'>To {subreddit}</span>
+            <span className='post-item_createdinfo--subreddit'>
+              To <Link to={'/r/' + subreddit}>{subreddit}</Link>
+            </span>
           </div>
         </div>
         <div className='post-item_body'>
@@ -24,7 +27,7 @@ function PostItem(props) {
             <span className='post-item_body--votes'>{voteCount} votes</span>
           </div>
           <div className='post-item_body--jumplinks'>
-            <a className='post-item_body--jumplinks-commentlink' href={`/comment/${threadId}`}>Comment</a>
+            <Link to={`/r/${subreddit}/${threadId}`}>Comment</Link>
             <a className='post-item_body--jumplinks-sharelink' href='#'>Share</a>
           </div>
         </div>
