@@ -49,9 +49,10 @@ export default (
         <IndexRoute component={Homepage} />
         <Route path='login' component={Login} />
         <Route path='question' component={SomeComponent} />
-        <Route path='r/:subreddit' component={SubredditContainer}>
-          <IndexRoute component={Subreddit} />
-          <Route path=':id' component={Thread} />
+        <Route path='r' component={SubredditContainer}>
+          <Route path=':subreddit' component={Subreddit}>
+            <Route path=':id' component={Thread} />
+          </Route>
         </Route>
       </Route>
     </Router>

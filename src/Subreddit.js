@@ -57,10 +57,10 @@ class Subreddit extends React.Component {
 
   render() {
     const { posts = [] } = this.state;
+    const content = this.props.children ? this.props.children : posts.map(createPostItem);
 
     return <div>
-      {posts.map(createPostItem)}
-      {this.props.children}
+      {content}
     </div>
   }
 }
