@@ -51,6 +51,8 @@ export default (
         <Route path='question' component={SomeComponent} />
         <Route path='r' component={SubredditContainer}>
           <Route path=':subreddit' component={Subreddit}>
+            <Route path='top' component={Subreddit} />
+            <Route path='new' component={Subreddit} />
             <Route path=':id' component={Thread} />
           </Route>
         </Route>

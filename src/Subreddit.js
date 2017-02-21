@@ -39,11 +39,16 @@ class Subreddit extends React.Component {
   }
 
   componentDidMount() {
-    const { params } = this.props;
+    debugger;
+    const { params, route } = this.props;
     const { subreddit } = params || {};
 
     if(subreddit) {
-      redditClient().getSubreddit({subreddit})
+      let category = null;
+      if(route.path !== ':subreddit') {
+        category = route.path;
+      }
+      redditClient().getSubreddit({subreddit, category})
         .then(({json}) => {
           console.log(json);
           const { data: { children: redditPosts }} = json;

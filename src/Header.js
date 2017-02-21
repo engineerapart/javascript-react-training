@@ -13,10 +13,12 @@ const styles = {
 };
 
 function Header(props) {
+  const { title } = props;
+
   return (
     <div style={styles.header}>
       <img src={logo} className="app-logo" alt="logo" />
-      <h2 style={{fontWeight: 'bold'}}>Welcome to React</h2>
+      <h2 style={{fontWeight: 'bold'}}>{title}</h2>
       <IndexLink to='/' activeClassName='link-active'>Go Home</IndexLink>
       <Link to='/r/birdsforscale' style={{margin: '0 10px'}} activeClassName='link-active'>BirdsForScale</Link>
       <Link to='/r/AskReddit' activeClassName='link-active'>AskReddit</Link>
@@ -25,5 +27,9 @@ function Header(props) {
     </div>
   );
 }
+
+Header.defaultProps = {
+  title: 'I am a React App',
+};
 
 export default Header;

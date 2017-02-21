@@ -19,8 +19,8 @@ function redditClient(options = {}) {
     return execute(uri);
   }
 
-  function getSubreddit({subreddit, ...rest}) {
-    const uri = buildUri(apiMap.subReddit({subreddit}), { ...rest });
+  function getSubreddit({subreddit, category, ...rest}) {
+    const uri = buildUri(apiMap.subReddit({subreddit, category}), { ...rest });
     return execute(uri);
   }
 

@@ -39,6 +39,10 @@ class Homepage extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log('I got new props!');
+  }
+
   componentDidMount() {
     redditClient().getRedditHome()
       .then(({json}) => {

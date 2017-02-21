@@ -21,6 +21,7 @@ function createPostItem(item) {
 }
 
 function Thread(props) {
+  debugger;
   const { params, subredditPosts } = props;
   const { id } = params || {};
   if(!id) {
@@ -37,8 +38,6 @@ function Thread(props) {
   if(!item) {
     return null;
   }
-
-  console.log(item.data.subreddit);
 
   return (
     <div>
